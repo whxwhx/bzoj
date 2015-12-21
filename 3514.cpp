@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstdio>
 #include <algorithm>
+#define mp(a,b) make_pair(a,b)
 #define rep(i,a,b) for(int i = a; i <= b; i++)
 using namespace std;
 const int N = 200010, inf = 1000000000;
@@ -14,7 +15,7 @@ struct node{
 	int d(){return f->ch[1] == this;}
 	bool c(){return f->ch[0] != this && f->ch[1] != this;}
 	void push(){if (rev) rev = 0, swap(ch[0], ch[1]), ch[0]->rev ^= 1, ch[1]->rev ^= 1;}
-	void upd(){mn = min(ch[0], ch[1]), mn = min(mn, w);}
+	void upd(){mn = min(ch[0]->mn, ch[1]->mn), mn = min(mn, w);}
 	void st(node *c, int d){ch[d] = c, c->f = this;}
 }T[N * 2], *null = &T[0];
 
@@ -50,9 +51,14 @@ void access(node *o){
 	}
 	splay(t);
 }
-void *findrt(node *o){
+node *findrt(int a){
+	node *o = &T[a];
 	access(o);
-	while (o->ch[0] != null) o = o->ch[0];
+	o->push();//!
+	while (o->ch[0] != null) {
+		o = o->ch[0];
+		o->push();//!
+	}
 	splay(o);
 	return o;
 }
@@ -72,19 +78,49 @@ int findmin(int a, int b){
 	mrt(x), access(y); return y->mn;
 }
 //segment-tree
-struct segnode{
-
-};
+struct seg{
+	seg *ch[2];
+	int s;
+}Seg[N * 50], *segnull = &Seg[N * 50], *rt[N];
+int l = 0;
+seg* nn(){
+	return &Seg[++l];
+}
+void seg_init(){
+	segnull->ch[0] = segnull->ch[1] = segnull;
+	segnull->s = 0;
+}
+seg* add(seg *x, int l, int r, int a){
+	seg *k; *k = *x; (k->s)++;
+	if (l < r){
+		int mid = (l + r) >> 1;
+		if (a <= mid) k->ch[0] = add(k->ch[0], l, mid, a);
+		else k->ch[1] = add(k->ch[1], mid + 1, r, a);
+	}
+	return k;
+}
+int qry(seg *x, int l, int r, int a, int b){
+	if (a <= l && r <= b) return x->s;
+	else{
+		int mid = (l + r) >> 1;
+		int ans = 0;
+		if (a <= mid) ans += qry(x->ch[0], l, mid, a, b);
+		if (b >  mid) ans += qry(x->ch[1], mid + 1, r, a, b);
+		return ans;
+	}
+}
 //work
 int n, m, k, type; 
 int pre[N];
+pair<int, int> t[N];
 void init(){
     LCT_init();
     rep(i,1,n) T[i].mn = T[i].w = inf, T[i].f = T[i].ch[0] = T[i].ch[1] = null;
     rep(i,n + 1, n + m) T[i].mn = T[i].w = i, T[i].f = T[i].ch[0] = T[i].ch[1] = null;
     rep(i,1,m){
         node *fa = findrt(a[i]), *fb = findrt(b[i]);
-        if (fa != fb) link(a[i], n + i), link(b[i], n + i);
+    	cout <<i<<endl;
+        if (fa != fb) link(a[i], n + i), link(b[i], n + i), pre[i] = 0;
         else {
             int t = findmin(a[i], b[i]);
             pre[i] = t;
@@ -92,12 +128,18 @@ void init(){
             link(a[i], n + i), link(b[i], n + i);
         }
     }
-
-
+    seg_init();
+    rep(i,1,m) t[i] = mp(pre[i], i);
+    sort(t + 1, t + m + 1);
+    int j = 1; rt[0] = segnull;
+    rep(i,1,m){
+    	rt[i] = rt[i - 1];
+    	while (j <= n && t[j].first < i) rt[i] = add(rt[i], 1, m, t[j].second), j++;
+    }
 }
  
-int qry(){
- 
+int qry(int l, int r){
+ 	return qry(rt[l], 1, m, l, r);
 }
  
 int main(){
@@ -110,4 +152,5 @@ int main(){
         if (type == 1) a ^= lastans, b ^= lastans;
         printf("%d\n",lastans = qry(a,b));
     }
+    return 0;
 }
