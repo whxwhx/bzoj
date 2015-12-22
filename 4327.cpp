@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstdio>
+#include <cstring>
 #include <algorithm>
 #define rep(i,a,b) for(int i = a; i <= b; i++)
 using namespace std;
@@ -15,7 +16,7 @@ bool vis[N];
 node *nn(){return &T[++l];}
 #define oc o->ch[t[i] - 'A']
 node* add(char *t, int l){
-	node *o = S:
+	node *o = S;
 	rep(i,1,l) {if (!oc) oc = nn(), oc->par = o; o = oc, o->l = i;}
 	return o;
 }
@@ -23,7 +24,7 @@ node *q[N];
 #define xf x->f
 #define xc x->ch[i]
 void build(){
-	int l = 0, r = 0;
+	int l = 0, r = 0; node *x = S;
 	rep(i,0,3) if (xc) q[r++] = xc, xc->f = S; else xc = S;
 	while (l < r){
 		node *x = q[l++];
@@ -54,6 +55,7 @@ int main(){
 		rep(i,1,l) t[i] = calc(t[i]);
 		rt[i] = add(t, l);
 	}
+        cout <<(bool)(S->ch[2])<<endl;
 	build();
 	node *o = S;
 	vis[0] = 1;
