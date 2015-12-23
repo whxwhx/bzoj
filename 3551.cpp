@@ -17,10 +17,11 @@ int f[N];
 int find(int x){
 	return f[x] == x ? x : f[x] = find(f[x]);
 }
-int l, v[N], fa[N];
+int l, V[N], fa[N], h[N];
 struct edge{
 	int to, pre;
 }e[N];
+int u[N];
 int el = 0;
 void ins(int a, int b){
 	e[++el] = (edge){b, u[a]}, u[a] = el;
@@ -63,20 +64,20 @@ void dfs(int x){
 	suc[x] = dfs_clock;
 }
 #define max(a,b) ((a) > (b) ? (a) : (b))
-int g[N][20], f[N][20];
+int g[N][20], F[N][20];
 void build_g(){
-	rep(i,1,n) g[i][0] = fa[i], f[i][0] = v[i];
+	rep(i,1,n) g[i][0] = fa[i], F[i][0] = V[i];
 	rep(i,0,19)
-		rep(j,1,n) g[i][j] = g[g[i][j - 1]][j - 1], f[i][j] = max(f[i][j - 1], f[g[i][j - 1]][j - 1]);
+		rep(j,1,n) g[i][j] = g[g[i][j - 1]][j - 1], F[i][j] = max(F[i][j - 1], F[g[i][j - 1]][j - 1]);
 }
 
 void build(){
 	l = n;
-	rep(i,1,(n << 1)) v[i] = 0, f[i] = i;
+	rep(i,1,(n << 1)) V[i] = 0, f[i] = i;
 	rep(i,1,n){
 		int fa1 = find(E[i].a), fb = find(E[i].b);
 		if (fa1 != fb){
-			v[++l] = E[i].c;
+			V[++l] = E[i].c;
 			f[fa1] = f[fb] = fa[fa1] = fa[fb] = l;
 		}
 	}
@@ -88,7 +89,7 @@ void build(){
 }
 
 int lc(int x, int c){
-	dep(i,19,0) if (g[x][i] && f[x][i] <= c) x = g[x][i]
+	dep(i,19,0) if (g[x][i] && F[x][i] <= c) x = g[x][i];
 	return x;
 }
 int qry(int c, int x, int k){
@@ -102,15 +103,17 @@ void work(){
 	int lastans = 0;
 	rep(i,1,q){
 		int c, x, k;
+		//c ^= lastans, x ^= lastans, k ^= lastans;
 		printf("%d\n",lastans = qry(c, x, k));
 		if (lastans == -1) lastans = 0;
 	}
 }
 
+#undef mid
 int b[N];
-int find(int x){
+int Find(int x){
 	int l = 1, r = n + 1;
-	while (i + 1 < r){
+	while (l + 1 < r){
 		int mid = (l + r) >> 1;
 		if (b[mid] <= x) l = mid; else r = mid;
 	}
@@ -121,7 +124,7 @@ int main(){
 	rep(i,1,n) scanf("%d",&h[i]), b[i] = h[i];
 	L = n;
 	sort(b + 1, b + n + 1);
-	rep(i,1,n) h[i] = find(h[i]);
+	rep(i,1,n) h[i] = Find(h[i]);
 
 	rep(i,1,m) scanf("%d%d%d",&E[i].a,&E[i].b,&E[i].c);
 	sort(E + 1, E + m + 1);
