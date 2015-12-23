@@ -5,7 +5,7 @@
 #define dep(i,a,b) for(int i = a; i >= b; i--)
 using namespace std;
 const int N = 200010, M = 500100;
-int n, m, q; 
+int n, m, q, L; 
 
 struct edg{
 	int a, b, c;
@@ -31,15 +31,34 @@ void ins(int a, int b){
 struct node{
 	node *ch[2];
 	int s;
-}T[N * 51];
+}T[N * 51], *null = &T[0], *rt[N];
 int tl = 0;
 node *nn(){return &T[++tl];}
-node *add(node *o, int l, int r, 
+void seg_init(){
+	null->ch[0] = null->ch[1] = null;
+	null->s = 0;
+	rt[0] = null;
+}
+#define mid ((l + r) >> 1)
+node *add(node *o, int l, int r, int x){
+	node *k = nn(); *k = *o, (k->s)++;
+	if (l == r) return k;
+	if (x <= mid) k->ch[0] = add(o->ch[0], l, mid, x); else k->ch[1] = add(o->ch[1], mid + 1, r, x);
+	return k;
+}
+
+#define s(a,d) a->ch[d]->s
+#define c(a,d) a->ch[d]
+int kth(node *a, node *b, int l, int r, int k){
+	if (k > (b->s) - (a->s) || !k) return -1;
+	if (l == r) return l;
+	if (k <= s(b,0) - s(a,0)) return kth(c(a, 0), c(b, 0), l, mid, k); else return kth(c(a, 1), c(b, 1), mid + 1, r, k - (s(b, 0) - s(a, 0)));
+}
 
 int pre[N], suc[N], dfs_clock = 0;
 void dfs(int x){
 	pre[x] = ++dfs_clock;
-	rt[dfs_clock] = add(rt[dfs_clock - 1], 1, n, h[x]);
+	rt[dfs_clock] = add(rt[dfs_clock - 1], 1, L, h[x]);
 	reg(i,x) dfs(v);
 	suc[x] = dfs_clock;
 }
@@ -64,16 +83,28 @@ void build(){
 	n = l;
 	rep(i,1,l) if (fa[i]) ins(fa[i], i);
 	build_g();
+	seg_init();
 	rep(i,1,l) if (!fa[i]) dfs(i);
 }
 
-
-int qry(){
-	
+int lc(int x, int c){
+	dep(i,19,0) if (g[x][i] && f[x][i] <= c) x = g[x][i]
+	return x;
+}
+int qry(int c, int x, int k){
+	x = lc(x, c);
+	int t = kth(rt[pre[x] - 1], rt[suc[x]], 1, L, k);
+	if (t != -1) t = h[t];
+	return t;
 }
 
 void work(){
-
+	int lastans = 0;
+	rep(i,1,q){
+		int c, x, k;
+		printf("%d\n",lastans = qry(c, x, k));
+		if (lastans == -1) lastans = 0;
+	}
 }
 
 int b[N];
@@ -88,6 +119,7 @@ int find(int x){
 int main(){
 	scanf("%d%d%d",&n,&m,&q);
 	rep(i,1,n) scanf("%d",&h[i]), b[i] = h[i];
+	L = n;
 	sort(b + 1, b + n + 1);
 	rep(i,1,n) h[i] = find(h[i]);
 
