@@ -5,7 +5,7 @@
 #define dep(i,a,b) for(int i = a; i >= b; i--)
 using namespace std;
 const int N = 200010, M = 500100;
-int n, m, q, L; 
+int n, m, q; 
 
 struct edg{
 	int a, b, c;
@@ -32,7 +32,7 @@ void ins(int a, int b){
 struct node{
 	node *ch[2];
 	int s;
-}T[N * 51], *null = &T[0], *rt[N];
+}T[100001 * 51], *null = &T[0], *rt[N];
 int tl = 0;
 node *nn(){return &T[++tl];}
 void seg_init(){
@@ -53,35 +53,35 @@ node *add(node *o, int l, int r, int x){
 int kth(node *a, node *b, int l, int r, int k){
 	if (k > (b->s) - (a->s) || !k) return -1;
 	if (l == r) return l;
-	if (k <= s(b,0) - s(a,0)) return kth(c(a, 0), c(b, 0), l, mid, k); else return kth(c(a, 1), c(b, 1), mid + 1, r, k - (s(b, 0) - s(a, 0)));
+	if (k <= s(b,1) - s(a,1)) return kth(c(a, 1), c(b, 1), mid + 1, r, k); else return kth(c(a, 0), c(b, 0), l, mid, k - (s(b, 1) - s(a, 1)));
 }
 
 int pre[N], suc[N], dfs_clock = 0;
 void dfs(int x){
 	pre[x] = ++dfs_clock;
-	rt[dfs_clock] = add(rt[dfs_clock - 1], 1, L, h[x]);
+	if (x <= n) rt[dfs_clock] = add(rt[dfs_clock - 1], 1, n, h[x]); else rt[dfs_clock] = rt[dfs_clock - 1];
 	reg(i,x) dfs(v);
 	suc[x] = dfs_clock;
 }
 #define max(a,b) ((a) > (b) ? (a) : (b))
 int g[N][20], F[N][20];
 void build_g(){
-	rep(i,1,n) g[i][0] = fa[i], F[i][0] = V[i];
-	rep(i,0,19)
-		rep(j,1,n) g[i][j] = g[g[i][j - 1]][j - 1], F[i][j] = max(F[i][j - 1], F[g[i][j - 1]][j - 1]);
+	V[0] = 0;
+	rep(i,1,l) g[i][0] = fa[i], F[i][0] = max(V[i], V[fa[i]]);
+	rep(j,1,16)
+		rep(i,1,l) g[i][j] = g[g[i][j - 1]][j - 1], F[i][j] = max(F[i][j - 1], F[g[i][j - 1]][j - 1]);
 }
 
 void build(){
 	l = n;
 	rep(i,1,(n << 1)) V[i] = 0, f[i] = i;
-	rep(i,1,n){
+	rep(i,1,m){
 		int fa1 = find(E[i].a), fb = find(E[i].b);
 		if (fa1 != fb){
 			V[++l] = E[i].c;
 			f[fa1] = f[fb] = fa[fa1] = fa[fb] = l;
 		}
 	}
-	n = l;
 	rep(i,1,l) if (fa[i]) ins(fa[i], i);
 	build_g();
 	seg_init();
@@ -89,28 +89,28 @@ void build(){
 }
 
 int lc(int x, int c){
-	dep(i,19,0) if (g[x][i] && F[x][i] <= c) x = g[x][i];
+	dep(i,16,0) if (g[x][i] && F[x][i] <= c) x = g[x][i];
 	return x;
 }
+int b[N];
 int qry(int c, int x, int k){
 	x = lc(x, c);
-	int t = kth(rt[pre[x] - 1], rt[suc[x]], 1, L, k);
-	if (t != -1) t = h[t];
+	int t = kth(rt[pre[x] - 1], rt[suc[x]], 1, n, k);
+	if (t != -1) t = b[t];
 	return t;
 }
 
 void work(){
 	int lastans = 0;
 	rep(i,1,q){
-		int c, x, k;
-		//c ^= lastans, x ^= lastans, k ^= lastans;
+		int c, x, k; scanf("%d%d%d",&x,&c,&k);
+		c ^= lastans, x ^= lastans, k ^= lastans;
 		printf("%d\n",lastans = qry(c, x, k));
 		if (lastans == -1) lastans = 0;
 	}
 }
 
 #undef mid
-int b[N];
 int Find(int x){
 	int l = 1, r = n + 1;
 	while (l + 1 < r){
@@ -122,7 +122,6 @@ int Find(int x){
 int main(){
 	scanf("%d%d%d",&n,&m,&q);
 	rep(i,1,n) scanf("%d",&h[i]), b[i] = h[i];
-	L = n;
 	sort(b + 1, b + n + 1);
 	rep(i,1,n) h[i] = Find(h[i]);
 
