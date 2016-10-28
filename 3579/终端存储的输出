@@ -1,0 +1,1234 @@
+Last login: Thu Aug 13 23:33:19 on ttys000
+whxdeMacBook:~ whx$ cd desktop/bzoj
+whxdeMacBook:bzoj whx$ ls
+1017	1090	1925	2122	2824	3233	3237	3579
+1045	1098	2121	2595	3205	3234	3238	4199
+whxdeMacBook:bzoj whx$ cd 3205
+whxdeMacBook:3205 whx$ ls
+3205.cpp
+whxdeMacBook:3205 whx$ g++ 3205.cpp -o 3205
+3205.cpp:53:30: error: use of undeclared identifier 'K'
+        else f[i][j][k] = dfs(I, J, K);
+                                    ^
+3205.cpp:72:35: error: array type 'bool [4]' is not assignable
+        rep(i,1,n) rep(j,1,m) inst[i][j] = 0;
+                              ~~~~~~~~~~ ^
+3205.cpp:75:73: error: use of undeclared identifier 'inq'; did you mean 'int'?
+        rep(i,1,n) rep(j,1,m) rep(k1,1,10) rep(k2,k1,10) F[k1][k2][i][j] = -1, inq[k1][k2][i][j] = 0;
+                                                                               ^~~
+                                                                               int
+3205.cpp:75:71: error: expected ';' after expression
+        rep(i,1,n) rep(j,1,m) rep(k1,1,10) rep(k2,k1,10) F[k1][k2][i][j] = -1, inq[k1][k2][i][j] = 0;
+                                                                             ^
+                                                                             ;
+3205.cpp:75:77: error: use of undeclared identifier 'k1'
+        rep(i,1,n) rep(j,1,m) rep(k1,1,10) rep(k2,k1,10) F[k1][k2][i][j] = -1, inq[k1][k2][i][j] = 0;
+                                                                                   ^
+3205.cpp:75:81: error: use of undeclared identifier 'k2'
+        rep(i,1,n) rep(j,1,m) rep(k1,1,10) rep(k2,k1,10) F[k1][k2][i][j] = -1, inq[k1][k2][i][j] = 0;
+                                                                                       ^
+3205.cpp:75:85: error: use of undeclared identifier 'i'; did you mean 'pos::i'?
+        rep(i,1,n) rep(j,1,m) rep(k1,1,10) rep(k2,k1,10) F[k1][k2][i][j] = -1, inq[k1][k2][i][j] = 0;
+                                                                                           ^
+                                                                                           pos::i
+3205.cpp:59:12: note: 'pos::i' declared here
+        int l, r, i, j;
+                  ^
+3205.cpp:75:85: error: invalid use of non-static data member 'i'
+        rep(i,1,n) rep(j,1,m) rep(k1,1,10) rep(k2,k1,10) F[k1][k2][i][j] = -1, inq[k1][k2][i][j] = 0;
+                                                                                           ^
+3205.cpp:75:88: error: use of undeclared identifier 'j'; did you mean 'pos::j'?
+        rep(i,1,n) rep(j,1,m) rep(k1,1,10) rep(k2,k1,10) F[k1][k2][i][j] = -1, inq[k1][k2][i][j] = 0;
+                                                                                              ^
+                                                                                              pos::j
+3205.cpp:59:15: note: 'pos::j' declared here
+        int l, r, i, j;
+                     ^
+3205.cpp:75:88: error: invalid use of non-static data member 'j'
+        rep(i,1,n) rep(j,1,m) rep(k1,1,10) rep(k2,k1,10) F[k1][k2][i][j] = -1, inq[k1][k2][i][j] = 0;
+                                                                                              ^
+3205.cpp:75:91: error: expected unqualified-id
+        rep(i,1,n) rep(j,1,m) rep(k1,1,10) rep(k2,k1,10) F[k1][k2][i][j] = -1, inq[k1][k2][i][j] = 0;
+                                                                                                 ^
+3205.cpp:88:8: warning: add explicit braces to avoid dangling else [-Wdangling-else]
+                                                else F[l][r][i][j] = min(F[l][r][i][j], F[l][t][...
+                                                ^
+3205.cpp:98:23: error: use of undeclared identifier 'q'
+                                if (l2 == r2) x = q[l1++];
+                                                  ^
+3205.cpp:99:28: error: use of undeclared identifier 'q'
+                                else if (l1 == r1) x = q[l2++];
+                                                       ^
+3205.cpp:100:18: error: use of undeclared identifier 'q'
+                                else if (cmp(q[l1], q[l2])) x = q[l1++]; else x = q[l2++];
+                                             ^
+3205.cpp:100:25: error: use of undeclared identifier 'q'
+                                else if (cmp(q[l1], q[l2])) x = q[l1++]; else x = q[l2++];
+                                                    ^
+3205.cpp:100:37: error: use of undeclared identifier 'q'
+                                else if (cmp(q[l1], q[l2])) x = q[l1++]; else x = q[l2++];
+                                                                ^
+3205.cpp:100:55: error: use of undeclared identifier 'q'
+                                else if (cmp(q[l1], q[l2])) x = q[l1++]; else x = q[l2++];
+                                                                                  ^
+3205.cpp:103:20: error: no member named 'i' in 'std::__1::pair<int, int>'
+                                        if (F[l][r][T.i][T.j] == -1 || F[l][r][x.i][x.j] + 1 < F...
+                                                    ~ ^
+3205.cpp:103:25: error: no member named 'j' in 'std::__1::pair<int, int>'
+                                        if (F[l][r][T.i][T.j] == -1 || F[l][r][x.i][x.j] + 1 < F...
+                                                         ~ ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+1 warning and 20 errors generated.
+whxdeMacBook:3205 whx$ g++ 3205.cpp -o 3205
+\3205.cpp:72:35: error: array type 'bool [4]' is not assignable
+        rep(i,1,n) rep(j,1,m) inst[i][j] = 0;
+                              ~~~~~~~~~~ ^
+3205.cpp:75:73: error: use of undeclared identifier 'inq'; did you mean 'int'?
+        rep(i,1,n) rep(j,1,m) rep(k1,1,10) rep(k2,k1,10) F[k1][k2][i][j] = -1, inq[k1][k2][i][j] = 0;
+                                                                               ^~~
+                                                                               int
+3205.cpp:75:71: error: expected ';' after expression
+        rep(i,1,n) rep(j,1,m) rep(k1,1,10) rep(k2,k1,10) F[k1][k2][i][j] = -1, inq[k1][k2][i][j] = 0;
+                                                                             ^
+                                                                             ;
+3205.cpp:75:77: error: use of undeclared identifier 'k1'
+        rep(i,1,n) rep(j,1,m) rep(k1,1,10) rep(k2,k1,10) F[k1][k2][i][j] = -1, inq[k1][k2][i][j] = 0;
+                                                                                   ^
+3205.cpp:75:81: error: use of undeclared identifier 'k2'
+        rep(i,1,n) rep(j,1,m) rep(k1,1,10) rep(k2,k1,10) F[k1][k2][i][j] = -1, inq[k1][k2][i][j] = 0;
+                                                                                       ^
+3205.cpp:75:85: error: use of undeclared identifier 'i'; did you mean 'pos::i'?
+        rep(i,1,n) rep(j,1,m) rep(k1,1,10) rep(k2,k1,10) F[k1][k2][i][j] = -1, inq[k1][k2][i][j] = 0;
+                                                                                           ^
+                                                                                           pos::i
+3205.cpp:59:12: note: 'pos::i' declared here
+        int l, r, i, j;
+                  ^
+3205.cpp:75:85: error: invalid use of non-static data member 'i'
+        rep(i,1,n) rep(j,1,m) rep(k1,1,10) rep(k2,k1,10) F[k1][k2][i][j] = -1, inq[k1][k2][i][j] = 0;
+                                                                                           ^
+3205.cpp:75:88: error: use of undeclared identifier 'j'; did you mean 'pos::j'?
+        rep(i,1,n) rep(j,1,m) rep(k1,1,10) rep(k2,k1,10) F[k1][k2][i][j] = -1, inq[k1][k2][i][j] = 0;
+                                                                                              ^
+                                                                                              pos::j
+3205.cpp:59:15: note: 'pos::j' declared here
+        int l, r, i, j;
+                     ^
+3205.cpp:75:88: error: invalid use of non-static data member 'j'
+        rep(i,1,n) rep(j,1,m) rep(k1,1,10) rep(k2,k1,10) F[k1][k2][i][j] = -1, inq[k1][k2][i][j] = 0;
+                                                                                              ^
+3205.cpp:75:91: error: expected unqualified-id
+        rep(i,1,n) rep(j,1,m) rep(k1,1,10) rep(k2,k1,10) F[k1][k2][i][j] = -1, inq[k1][k2][i][j] = 0;
+                                                                                                 ^
+3205.cpp:88:8: warning: add explicit braces to avoid dangling else [-Wdangling-else]
+                                                else F[l][r][i][j] = min(F[l][r][i][j], F[l][t][...
+                                                ^
+3205.cpp:98:23: error: use of undeclared identifier 'q'
+                                if (l2 == r2) x = q[l1++];
+                                                  ^
+3205.cpp:99:28: error: use of undeclared identifier 'q'
+                                else if (l1 == r1) x = q[l2++];
+                                                       ^
+3205.cpp:100:18: error: use of undeclared identifier 'q'
+                                else if (cmp(q[l1], q[l2])) x = q[l1++]; else x = q[l2++];
+                                             ^
+3205.cpp:100:25: error: use of undeclared identifier 'q'
+                                else if (cmp(q[l1], q[l2])) x = q[l1++]; else x = q[l2++];
+                                                    ^
+3205.cpp:100:37: error: use of undeclared identifier 'q'
+                                else if (cmp(q[l1], q[l2])) x = q[l1++]; else x = q[l2++];
+                                                                ^
+3205.cpp:100:55: error: use of undeclared identifier 'q'
+                                else if (cmp(q[l1], q[l2])) x = q[l1++]; else x = q[l2++];
+                                                                                  ^
+3205.cpp:103:20: error: no member named 'i' in 'std::__1::pair<int, int>'
+                                        if (F[l][r][T.i][T.j] == -1 || F[l][r][x.i][x.j] + 1 < F...
+                                                    ~ ^
+3205.cpp:103:25: error: no member named 'j' in 'std::__1::pair<int, int>'
+                                        if (F[l][r][T.i][T.j] == -1 || F[l][r][x.i][x.j] + 1 < F...
+                                                         ~ ^
+3205.cpp:103:71: error: no member named 'i' in 'std::__1::pair<int, int>'
+  ...if (F[l][r][T.i][T.j] == -1 || F[l][r][x.i][x.j] + 1 < F[l][r][T.i][T.j]){
+                                                                    ~ ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+1 warning and 20 errors generated.
+whxdeMacBook:3205 whx$ g++ 3205.cpp -o 3205
+3205.cpp:75:73: error: use of undeclared identifier 'inq'; did you mean 'int'?
+        rep(i,1,n) rep(j,1,m) rep(k1,1,10) rep(k2,k1,10) F[k1][k2][i][j] = -1, inq[k1][k2][i][j] = 0;
+                                                                               ^~~
+                                                                               int
+3205.cpp:75:71: error: expected ';' after expression
+        rep(i,1,n) rep(j,1,m) rep(k1,1,10) rep(k2,k1,10) F[k1][k2][i][j] = -1, inq[k1][k2][i][j] = 0;
+                                                                             ^
+                                                                             ;
+3205.cpp:75:77: error: use of undeclared identifier 'k1'
+        rep(i,1,n) rep(j,1,m) rep(k1,1,10) rep(k2,k1,10) F[k1][k2][i][j] = -1, inq[k1][k2][i][j] = 0;
+                                                                                   ^
+3205.cpp:75:81: error: use of undeclared identifier 'k2'
+        rep(i,1,n) rep(j,1,m) rep(k1,1,10) rep(k2,k1,10) F[k1][k2][i][j] = -1, inq[k1][k2][i][j] = 0;
+                                                                                       ^
+3205.cpp:75:85: error: use of undeclared identifier 'i'; did you mean 'pos::i'?
+        rep(i,1,n) rep(j,1,m) rep(k1,1,10) rep(k2,k1,10) F[k1][k2][i][j] = -1, inq[k1][k2][i][j] = 0;
+                                                                                           ^
+                                                                                           pos::i
+3205.cpp:59:12: note: 'pos::i' declared here
+        int l, r, i, j;
+                  ^
+3205.cpp:75:85: error: invalid use of non-static data member 'i'
+        rep(i,1,n) rep(j,1,m) rep(k1,1,10) rep(k2,k1,10) F[k1][k2][i][j] = -1, inq[k1][k2][i][j] = 0;
+                                                                                           ^
+3205.cpp:75:88: error: use of undeclared identifier 'j'; did you mean 'pos::j'?
+        rep(i,1,n) rep(j,1,m) rep(k1,1,10) rep(k2,k1,10) F[k1][k2][i][j] = -1, inq[k1][k2][i][j] = 0;
+                                                                                              ^
+                                                                                              pos::j
+3205.cpp:59:15: note: 'pos::j' declared here
+        int l, r, i, j;
+                     ^
+3205.cpp:75:88: error: invalid use of non-static data member 'j'
+        rep(i,1,n) rep(j,1,m) rep(k1,1,10) rep(k2,k1,10) F[k1][k2][i][j] = -1, inq[k1][k2][i][j] = 0;
+                                                                                              ^
+3205.cpp:75:91: error: expected unqualified-id
+        rep(i,1,n) rep(j,1,m) rep(k1,1,10) rep(k2,k1,10) F[k1][k2][i][j] = -1, inq[k1][k2][i][j] = 0;
+                                                                                                 ^
+3205.cpp:88:8: warning: add explicit braces to avoid dangling else [-Wdangling-else]
+                                                else F[l][r][i][j] = min(F[l][r][i][j], F[l][t][...
+                                                ^
+3205.cpp:98:23: error: use of undeclared identifier 'q'
+                                if (l2 == r2) x = q[l1++];
+                                                  ^
+3205.cpp:99:28: error: use of undeclared identifier 'q'
+                                else if (l1 == r1) x = q[l2++];
+                                                       ^
+3205.cpp:100:18: error: use of undeclared identifier 'q'
+                                else if (cmp(q[l1], q[l2])) x = q[l1++]; else x = q[l2++];
+                                             ^
+3205.cpp:100:25: error: use of undeclared identifier 'q'
+                                else if (cmp(q[l1], q[l2])) x = q[l1++]; else x = q[l2++];
+                                                    ^
+3205.cpp:100:37: error: use of undeclared identifier 'q'
+                                else if (cmp(q[l1], q[l2])) x = q[l1++]; else x = q[l2++];
+                                                                ^
+3205.cpp:100:55: error: use of undeclared identifier 'q'
+                                else if (cmp(q[l1], q[l2])) x = q[l1++]; else x = q[l2++];
+                                                                                  ^
+3205.cpp:103:20: error: no member named 'i' in 'std::__1::pair<int, int>'
+                                        if (F[l][r][T.i][T.j] == -1 || F[l][r][x.i][x.j] + 1 < F...
+                                                    ~ ^
+3205.cpp:103:25: error: no member named 'j' in 'std::__1::pair<int, int>'
+                                        if (F[l][r][T.i][T.j] == -1 || F[l][r][x.i][x.j] + 1 < F...
+                                                         ~ ^
+3205.cpp:103:71: error: no member named 'i' in 'std::__1::pair<int, int>'
+  ...if (F[l][r][T.i][T.j] == -1 || F[l][r][x.i][x.j] + 1 < F[l][r][T.i][T.j]){
+                                                                    ~ ^
+3205.cpp:103:76: error: no member named 'j' in 'std::__1::pair<int, int>'
+  ...if (F[l][r][T.i][T.j] == -1 || F[l][r][x.i][x.j] + 1 < F[l][r][T.i][T.j]){
+                                                                         ~ ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+1 warning and 20 errors generated.
+whxdeMacBook:3205 whx$ g++ 3205.cpp -o 3205
+3205.cpp:88:8: warning: add explicit braces to avoid dangling else [-Wdangling-else]
+                                                else F[l][r][i][j] = min(F[l][r][i][j], F[l][t][...
+                                                ^
+3205.cpp:98:23: error: use of undeclared identifier 'q'
+                                if (l2 == r2) x = q[l1++];
+                                                  ^
+3205.cpp:99:28: error: use of undeclared identifier 'q'
+                                else if (l1 == r1) x = q[l2++];
+                                                       ^
+3205.cpp:100:18: error: use of undeclared identifier 'q'
+                                else if (cmp(q[l1], q[l2])) x = q[l1++]; else x = q[l2++];
+                                             ^
+3205.cpp:100:25: error: use of undeclared identifier 'q'
+                                else if (cmp(q[l1], q[l2])) x = q[l1++]; else x = q[l2++];
+                                                    ^
+3205.cpp:100:37: error: use of undeclared identifier 'q'
+                                else if (cmp(q[l1], q[l2])) x = q[l1++]; else x = q[l2++];
+                                                                ^
+3205.cpp:100:55: error: use of undeclared identifier 'q'
+                                else if (cmp(q[l1], q[l2])) x = q[l1++]; else x = q[l2++];
+                                                                                  ^
+3205.cpp:103:20: error: no member named 'i' in 'std::__1::pair<int, int>'
+                                        if (F[l][r][T.i][T.j] == -1 || F[l][r][x.i][x.j] + 1 < F...
+                                                    ~ ^
+3205.cpp:103:25: error: no member named 'j' in 'std::__1::pair<int, int>'
+                                        if (F[l][r][T.i][T.j] == -1 || F[l][r][x.i][x.j] + 1 < F...
+                                                         ~ ^
+3205.cpp:103:71: error: no member named 'i' in 'std::__1::pair<int, int>'
+  ...if (F[l][r][T.i][T.j] == -1 || F[l][r][x.i][x.j] + 1 < F[l][r][T.i][T.j]){
+                                                                    ~ ^
+3205.cpp:103:76: error: no member named 'j' in 'std::__1::pair<int, int>'
+  ...if (F[l][r][T.i][T.j] == -1 || F[l][r][x.i][x.j] + 1 < F[l][r][T.i][T.j]){
+                                                                         ~ ^
+3205.cpp:104:17: error: no member named 'i' in 'std::__1::pair<int, int>'
+                                                F[l][r][T.i][T.j] = F[l][r][x.i][x.j] + 1;
+                                                        ~ ^
+3205.cpp:104:22: error: no member named 'j' in 'std::__1::pair<int, int>'
+                                                F[l][r][T.i][T.j] = F[l][r][x.i][x.j] + 1;
+                                                             ~ ^
+3205.cpp:105:32: error: no member named 'i' in 'std::__1::pair<int, int>'
+                                                q2[r2++] = (pos){l, r, T.i, T.j};
+                                                                       ~ ^
+3205.cpp:105:37: error: no member named 'j' in 'std::__1::pair<int, int>'
+                                                q2[r2++] = (pos){l, r, T.i, T.j};
+                                                                            ~ ^
+1 warning and 14 errors generated.
+whxdeMacBook:3205 whx$ g++ 3205.cpp -o 3205
+3205.cpp:99:23: error: use of undeclared identifier 'q'
+                                if (l2 == r2) x = q[l1++];
+                                                  ^
+3205.cpp:100:28: error: use of undeclared identifier 'q'
+                                else if (l1 == r1) x = q[l2++];
+                                                       ^
+3205.cpp:101:18: error: use of undeclared identifier 'q'
+                                else if (cmp(q[l1], q[l2])) x = q[l1++]; else x = q[l2++];
+                                             ^
+3205.cpp:101:25: error: use of undeclared identifier 'q'
+                                else if (cmp(q[l1], q[l2])) x = q[l1++]; else x = q[l2++];
+                                                    ^
+3205.cpp:101:37: error: use of undeclared identifier 'q'
+                                else if (cmp(q[l1], q[l2])) x = q[l1++]; else x = q[l2++];
+                                                                ^
+3205.cpp:101:55: error: use of undeclared identifier 'q'
+                                else if (cmp(q[l1], q[l2])) x = q[l1++]; else x = q[l2++];
+                                                                                  ^
+3205.cpp:104:20: error: no member named 'i' in 'std::__1::pair<int, int>'
+                                        if (F[l][r][T.i][T.j] == -1 || F[l][r][x.i][x.j] + 1 < F...
+                                                    ~ ^
+3205.cpp:104:25: error: no member named 'j' in 'std::__1::pair<int, int>'
+                                        if (F[l][r][T.i][T.j] == -1 || F[l][r][x.i][x.j] + 1 < F...
+                                                         ~ ^
+3205.cpp:104:71: error: no member named 'i' in 'std::__1::pair<int, int>'
+  ...if (F[l][r][T.i][T.j] == -1 || F[l][r][x.i][x.j] + 1 < F[l][r][T.i][T.j]){
+                                                                    ~ ^
+3205.cpp:104:76: error: no member named 'j' in 'std::__1::pair<int, int>'
+  ...if (F[l][r][T.i][T.j] == -1 || F[l][r][x.i][x.j] + 1 < F[l][r][T.i][T.j]){
+                                                                         ~ ^
+3205.cpp:105:17: error: no member named 'i' in 'std::__1::pair<int, int>'
+                                                F[l][r][T.i][T.j] = F[l][r][x.i][x.j] + 1;
+                                                        ~ ^
+3205.cpp:105:22: error: no member named 'j' in 'std::__1::pair<int, int>'
+                                                F[l][r][T.i][T.j] = F[l][r][x.i][x.j] + 1;
+                                                             ~ ^
+3205.cpp:106:32: error: no member named 'i' in 'std::__1::pair<int, int>'
+                                                q2[r2++] = (pos){l, r, T.i, T.j};
+                                                                       ~ ^
+3205.cpp:106:37: error: no member named 'j' in 'std::__1::pair<int, int>'
+                                                q2[r2++] = (pos){l, r, T.i, T.j};
+                                                                            ~ ^
+14 errors generated.
+whxdeMacBook:3205 whx$ g++ 3205.cpp -o 3205
+3205.cpp:101:18: error: use of undeclared identifier 'q'
+                                else if (cmp(q[l1], q[l2])) x = q1[l1++]; else x = q2[l2++];
+                                             ^
+3205.cpp:101:25: error: use of undeclared identifier 'q'
+                                else if (cmp(q[l1], q[l2])) x = q1[l1++]; else x = q2[l2++];
+                                                    ^
+3205.cpp:104:20: error: no member named 'i' in 'std::__1::pair<int, int>'
+                                        if (F[l][r][T.i][T.j] == -1 || F[l][r][x.i][x.j] + 1 < F...
+                                                    ~ ^
+3205.cpp:104:25: error: no member named 'j' in 'std::__1::pair<int, int>'
+                                        if (F[l][r][T.i][T.j] == -1 || F[l][r][x.i][x.j] + 1 < F...
+                                                         ~ ^
+3205.cpp:104:71: error: no member named 'i' in 'std::__1::pair<int, int>'
+  ...if (F[l][r][T.i][T.j] == -1 || F[l][r][x.i][x.j] + 1 < F[l][r][T.i][T.j]){
+                                                                    ~ ^
+3205.cpp:104:76: error: no member named 'j' in 'std::__1::pair<int, int>'
+  ...if (F[l][r][T.i][T.j] == -1 || F[l][r][x.i][x.j] + 1 < F[l][r][T.i][T.j]){
+                                                                         ~ ^
+3205.cpp:105:17: error: no member named 'i' in 'std::__1::pair<int, int>'
+                                                F[l][r][T.i][T.j] = F[l][r][x.i][x.j] + 1;
+                                                        ~ ^
+3205.cpp:105:22: error: no member named 'j' in 'std::__1::pair<int, int>'
+                                                F[l][r][T.i][T.j] = F[l][r][x.i][x.j] + 1;
+                                                             ~ ^
+3205.cpp:106:32: error: no member named 'i' in 'std::__1::pair<int, int>'
+                                                q2[r2++] = (pos){l, r, T.i, T.j};
+                                                                       ~ ^
+3205.cpp:106:37: error: no member named 'j' in 'std::__1::pair<int, int>'
+                                                q2[r2++] = (pos){l, r, T.i, T.j};
+                                                                            ~ ^
+10 errors generated.
+whxdeMacBook:3205 whx$ g++ 3205.cpp -o 3205
+3205.cpp:104:20: error: no member named 'i' in 'std::__1::pair<int, int>'
+                                        if (F[l][r][T.i][T.j] == -1 || F[l][r][x.i][x.j] + 1 < F...
+                                                    ~ ^
+3205.cpp:104:25: error: no member named 'j' in 'std::__1::pair<int, int>'
+                                        if (F[l][r][T.i][T.j] == -1 || F[l][r][x.i][x.j] + 1 < F...
+                                                         ~ ^
+3205.cpp:104:71: error: no member named 'i' in 'std::__1::pair<int, int>'
+  ...if (F[l][r][T.i][T.j] == -1 || F[l][r][x.i][x.j] + 1 < F[l][r][T.i][T.j]){
+                                                                    ~ ^
+3205.cpp:104:76: error: no member named 'j' in 'std::__1::pair<int, int>'
+  ...if (F[l][r][T.i][T.j] == -1 || F[l][r][x.i][x.j] + 1 < F[l][r][T.i][T.j]){
+                                                                         ~ ^
+3205.cpp:105:17: error: no member named 'i' in 'std::__1::pair<int, int>'
+                                                F[l][r][T.i][T.j] = F[l][r][x.i][x.j] + 1;
+                                                        ~ ^
+3205.cpp:105:22: error: no member named 'j' in 'std::__1::pair<int, int>'
+                                                F[l][r][T.i][T.j] = F[l][r][x.i][x.j] + 1;
+                                                             ~ ^
+3205.cpp:106:32: error: no member named 'i' in 'std::__1::pair<int, int>'
+                                                q2[r2++] = (pos){l, r, T.i, T.j};
+                                                                       ~ ^
+3205.cpp:106:37: error: no member named 'j' in 'std::__1::pair<int, int>'
+                                                q2[r2++] = (pos){l, r, T.i, T.j};
+                                                                            ~ ^
+8 errors generated.
+whxdeMacBook:3205 whx$ g++ 3205.cpp -o 3205
+whxdeMacBook:3205 whx$ ./3205
+4 10 5
+
+1.........
+
+AA...x4...
+
+..A..x....
+
+2....x....
+
+..C.3.A...
+Bus error: 10
+whxdeMacBook:3205 whx$ g++ 3205.cpp -o 3205
+whxdeMacBook:3205 whx$ ./3205
+4 10 5
+1.........
+AA...x4...
+..A..x....
+2....x....
+..C.3.A...
+Bus error: 10
+whxdeMacBook:3205 whx$ g++ 3205.cpp -o 3205
+whxdeMacBook:3205 whx$ ./3205
+4 10 5
+1.........
+AA...x4...
+..A..x....
+2....x....
+..C.3.A...
+1
+Bus error: 10
+whxdeMacBook:3205 whx$ g++ 3205.cpp -o 3205
+whxdeMacBook:3205 whx$ ./3205
+4 10 5
+1.........
+AA...x4...
+..A..x....
+2....x....
+..C.3.A...
+1
+Bus error: 10
+whxdeMacBook:3205 whx$ g++ 3205.cpp -o 3205
+whxdeMacBook:3205 whx$ ./3205
+4 10 5
+1.........
+AA...x4...
+..A..x....
+2....x....
+..C.3.A...
+Bus error: 10
+whxdeMacBook:3205 whx$ g++ 3205.cpp -o 3205
+whxdeMacBook:3205 whx$ ./3205
+4 10 5
+1.........
+AA...x4...
+..A..x....
+2....x....
+..C.3.A...
+Bus error: 10
+whxdeMacBook:3205 whx$ g++ 3205.cpp -o 3205
+whxdeMacBook:3205 whx$ ./3205
+4 10 5
+1.........
+AA...x4...
+..A..x....
+2....x....
+..C.3.A...
+1
+Bus error: 10
+whxdeMacBook:3205 whx$ g++ 3205.cpp -o 3205
+whxdeMacBook:3205 whx$ ./3205
+4 10 5
+1.........
+AA...x4...
+..A..x....
+2....x....
+..C.3.A...
+1
+2147483647
+whxdeMacBook:3205 whx$ g++ 3205.cpp -o 3205
+3205.cpp:72:89: error: invalid operands to binary expression ('basic_ostream<char,
+      std::__1::char_traits<char> >' and 'node' (aka 'pair<int, int>'))
+  ...rep(j,1,m) rep(k,0,3) f[i][j][k] = dfs(i,j,k), cout <<i<<' '<<j<<' '<<k<<' '<<f[i][j][k]<<endl;
+                                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^ ~~~~~~~~~~
+/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/ostream:195:20: note: candidate function
+      not viable: no known conversion from 'node' (aka 'pair<int, int>') to 'const void *' for 1st
+      argument; take the address of the argument with &
+    basic_ostream& operator<<(const void* __p);
+                   ^
+/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/ostream:179:20: note: candidate function
+      not viable: no known conversion from 'node' (aka 'pair<int, int>') to
+      'std::__1::basic_ostream<char> &(*)(std::__1::basic_ostream<char> &)' for 1st argument
+    basic_ostream& operator<<(basic_ostream& (*__pf)(basic_ostream&));
+                   ^
+/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/ostream:180:20: note: candidate function
+      not viable: no known conversion from 'node' (aka 'pair<int, int>') to 'basic_ios<char_type,
+      traits_type> &(*)(basic_ios<char_type, traits_type> &)' for 1st argument
+    basic_ostream& operator<<(basic_ios<char_type, traits_type>&
+                   ^
+/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/ostream:182:20: note: candidate function
+      not viable: no known conversion from 'node' (aka 'pair<int, int>') to 'std::__1::ios_base
+      &(*)(std::__1::ios_base &)' for 1st argument
+    basic_ostream& operator<<(ios_base& (*__pf)(ios_base&));
+                   ^
+/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/ostream:183:20: note: candidate function
+      not viable: no known conversion from 'node' (aka 'pair<int, int>') to 'bool' for 1st argument
+    basic_ostream& operator<<(bool __n);
+                   ^
+/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/ostream:184:20: note: candidate function
+      not viable: no known conversion from 'node' (aka 'pair<int, int>') to 'short' for 1st argument
+    basic_ostream& operator<<(short __n);
+                   ^
+/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/ostream:185:20: note: candidate function
+      not viable: no known conversion from 'node' (aka 'pair<int, int>') to 'unsigned short' for 1st
+      argument
+    basic_ostream& operator<<(unsigned short __n);
+                   ^
+/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/ostream:186:20: note: candidate function
+      not viable: no known conversion from 'node' (aka 'pair<int, int>') to 'int' for 1st argument
+    basic_ostream& operator<<(int __n);
+                   ^
+/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/ostream:187:20: note: candidate function
+      not viable: no known conversion from 'node' (aka 'pair<int, int>') to 'unsigned int' for 1st
+      argument
+    basic_ostream& operator<<(unsigned int __n);
+                   ^
+/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/ostream:188:20: note: candidate function
+      not viable: no known conversion from 'node' (aka 'pair<int, int>') to 'long' for 1st argument
+    basic_ostream& operator<<(long __n);
+                   ^
+/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/ostream:189:20: note: candidate function
+      not viable: no known conversion from 'node' (aka 'pair<int, int>') to 'unsigned long' for 1st
+      argument
+    basic_ostream& operator<<(unsigned long __n);
+                   ^
+/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/ostream:190:20: note: candidate function
+      not viable: no known conversion from 'node' (aka 'pair<int, int>') to 'long long' for 1st argument
+    basic_ostream& operator<<(long long __n);
+                   ^
+/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/ostream:191:20: note: candidate function
+      not viable: no known conversion from 'node' (aka 'pair<int, int>') to 'unsigned long long' for 1st
+      argument
+    basic_ostream& operator<<(unsigned long long __n);
+                   ^
+/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/ostream:192:20: note: candidate function
+      not viable: no known conversion from 'node' (aka 'pair<int, int>') to 'float' for 1st argument
+    basic_ostream& operator<<(float __f);
+                   ^
+/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/ostream:193:20: note: candidate function
+      not viable: no known conversion from 'node' (aka 'pair<int, int>') to 'double' for 1st argument
+    basic_ostream& operator<<(double __f);
+                   ^
+/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/ostream:194:20: note: candidate function
+      not viable: no known conversion from 'node' (aka 'pair<int, int>') to 'long double' for 1st
+      argument
+    basic_ostream& operator<<(long double __f);
+                   ^
+/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/ostream:196:20: note: candidate function
+      not viable: no known conversion from 'node' (aka 'pair<int, int>') to 'basic_streambuf<char_type,
+      traits_type> *' for 1st argument
+    basic_ostream& operator<<(basic_streambuf<char_type, traits_type>* __sb);
+                   ^
+/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/ostream:773:1: note: candidate function
+      [with _CharT = char, _Traits = std::__1::char_traits<char>] not viable: no known conversion from
+      'node' (aka 'pair<int, int>') to 'char' for 2nd argument
+operator<<(basic_ostream<_CharT, _Traits>& __os, char __cn)
+^
+/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/ostream:806:1: note: candidate function
+      [with _Traits = std::__1::char_traits<char>] not viable: no known conversion from 'node'
+      (aka 'pair<int, int>') to 'char' for 2nd argument
+operator<<(basic_ostream<char, _Traits>& __os, char __c)
+^
+/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/ostream:813:1: note: candidate function
+      [with _Traits = std::__1::char_traits<char>] not viable: no known conversion from 'node'
+      (aka 'pair<int, int>') to 'signed char' for 2nd argument
+operator<<(basic_ostream<char, _Traits>& __os, signed char __c)
+^
+/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/ostream:820:1: note: candidate function
+      [with _Traits = std::__1::char_traits<char>] not viable: no known conversion from 'node'
+      (aka 'pair<int, int>') to 'unsigned char' for 2nd argument
+operator<<(basic_ostream<char, _Traits>& __os, unsigned char __c)
+^
+/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/ostream:834:1: note: candidate function
+      [with _CharT = char, _Traits = std::__1::char_traits<char>] not viable: no known conversion from
+      'node' (aka 'pair<int, int>') to 'const char *' for 2nd argument
+operator<<(basic_ostream<_CharT, _Traits>& __os, const char* __strn)
+^
+/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/ostream:880:1: note: candidate function
+      [with _Traits = std::__1::char_traits<char>] not viable: no known conversion from 'node'
+      (aka 'pair<int, int>') to 'const char *' for 2nd argument
+operator<<(basic_ostream<char, _Traits>& __os, const char* __str)
+^
+/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/ostream:887:1: note: candidate function
+      [with _Traits = std::__1::char_traits<char>] not viable: no known conversion from 'node'
+      (aka 'pair<int, int>') to 'const signed char *' for 2nd argument
+operator<<(basic_ostream<char, _Traits>& __os, const signed char* __str)
+^
+/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/ostream:895:1: note: candidate function
+      [with _Traits = std::__1::char_traits<char>] not viable: no known conversion from 'node'
+      (aka 'pair<int, int>') to 'const unsigned char *' for 2nd argument
+operator<<(basic_ostream<char, _Traits>& __os, const unsigned char* __str)
+^
+/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/ostream:1074:1: note: candidate function
+      [with _CharT = char, _Traits = std::__1::char_traits<char>] not viable: no known conversion from
+      'node' (aka 'pair<int, int>') to 'const std::__1::error_code' for 2nd argument
+operator<<(basic_ostream<_CharT, _Traits>& __os, const error_code& __ec)
+^
+/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/ostream:766:1: note: candidate template
+      ignored: deduced conflicting types for parameter '_CharT' ('char' vs. 'std::__1::pair<int, int>')
+operator<<(basic_ostream<_CharT, _Traits>& __os, _CharT __c)
+^
+/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/ostream:827:1: note: candidate template
+      ignored: could not match 'const _CharT *' against 'node' (aka 'pair<int, int>')
+operator<<(basic_ostream<_CharT, _Traits>& __os, const _CharT* __str)
+^
+/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/ostream:1065:1: note: candidate template
+      ignored: could not match 'basic_string' against 'pair'
+operator<<(basic_ostream<_CharT, _Traits>& __os,
+^
+/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/ostream:1082:1: note: candidate template
+      ignored: could not match 'shared_ptr' against 'pair'
+operator<<(basic_ostream<_CharT, _Traits>& __os, shared_ptr<_Yp> const& __p)
+^
+/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/ostream:1089:1: note: candidate template
+      ignored: could not match 'bitset' against 'pair'
+operator<<(basic_ostream<_CharT, _Traits>& __os, const bitset<_Size>& __x)
+^
+1 error generated.
+whxdeMacBook:3205 whx$ g++ 3205.cpp -o 3205
+whxdeMacBook:3205 whx$ ./3205
+4 10 5
+1.........
+AA...x4...
+..A..x....
+2....x....
+..C.3.A...
+1 1 0 1 1
+1 1 1 -1 -1
+1 1 2 -1 -1
+1 1 3 1 1
+1 2 0 1 2
+1 2 1 -1 -1
+1 2 2 -1 -1
+1 2 3 1 2
+1 3 0 1 3
+1 3 1 -1 -1
+1 3 2 -1 -1
+1 3 3 1 3
+1 4 0 1 4
+1 4 1 -1 -1
+1 4 2 -1 -1
+1 4 3 1 4
+1 5 0 1 5
+1 5 1 -1 -1
+1 5 2 -1 -1
+1 5 3 1 5
+2 1 0 1 2
+2 1 1 -1 -1
+2 1 2 -1 -1
+2 1 3 -1 -1
+2 2 0 1 2
+2 2 1 -1 -1
+2 2 2 -1 -1
+2 2 3 -1 -1
+2 3 0 1 2
+2 3 1 -1 -1
+2 3 2 -1 -1
+2 3 3 -1 -1
+2 4 0 1 2
+2 4 1 -1 -1
+2 4 2 -1 -1
+2 4 3 -1 -1
+2 5 0 1 2
+2 5 1 -1 -1
+2 5 2 -1 -1
+2 5 3 -1 -1
+3 1 0 6 5
+3 1 1 6 5
+3 1 2 6 5
+3 1 3 6 5
+3 2 0 6 5
+3 2 1 6 5
+3 2 2 6 5
+3 2 3 6 5
+3 3 0 1 2
+3 3 1 -1 -1
+3 3 2 6 5
+3 3 3 6 5
+3 4 0 1 2
+3 4 1 -1 -1
+3 4 2 6 5
+3 4 3 6 5
+3 5 0 1 2
+3 5 1 -1 -1
+3 5 2 6 5
+3 5 3 6 5
+4 1 0 1 2
+4 1 1 -1 -1
+4 1 2 6 5
+4 1 3 -1 -1
+4 2 0 1 2
+4 2 1 -1 -1
+4 2 2 6 5
+4 2 3 -1 -1
+4 3 0 1 2
+4 3 1 -1 -1
+4 3 2 6 5
+4 3 3 -1 -1
+4 4 0 1 2
+4 4 1 -1 -1
+4 4 2 6 5
+4 4 3 -1 -1
+4 5 0 1 2
+4 5 1 -1 -1
+4 5 2 6 5
+4 5 3 -1 -1
+5 1 0 1 2
+5 1 1 5 1
+5 1 2 6 5
+5 1 3 -1 -1
+5 2 0 1 2
+5 2 1 5 2
+5 2 2 6 5
+5 2 3 -1 -1
+5 3 0 -1 -1
+5 3 1 -1 -1
+5 3 2 -1 -1
+5 3 3 -1 -1
+5 4 0 1 2
+5 4 1 5 4
+5 4 2 6 5
+5 4 3 -1 -1
+5 5 0 1 2
+5 5 1 5 5
+5 5 2 6 5
+5 5 3 -1 -1
+6 1 0 6 1
+6 1 1 -1 -1
+6 1 2 6 1
+6 1 3 -1 -1
+6 2 0 6 2
+6 2 1 -1 -1
+6 2 2 6 2
+6 2 3 -1 -1
+6 3 0 6 3
+6 3 1 -1 -1
+6 3 2 6 3
+6 3 3 -1 -1
+6 4 0 6 4
+6 4 1 -1 -1
+6 4 2 6 4
+6 4 3 -1 -1
+6 5 0 6 5
+6 5 1 -1 -1
+6 5 2 6 5
+6 5 3 -1 -1
+7 1 0 6 7
+7 1 1 -1 -1
+7 1 2 6 7
+7 1 3 7 1
+7 2 0 6 7
+7 2 1 -1 -1
+7 2 2 6 7
+7 2 3 7 2
+7 3 0 6 7
+7 3 1 -1 -1
+7 3 2 6 7
+7 3 3 7 3
+7 4 0 6 7
+7 4 1 -1 -1
+7 4 2 6 7
+7 4 3 7 4
+7 5 0 6 7
+7 5 1 -1 -1
+7 5 2 6 7
+7 5 3 7 5
+8 1 0 6 7
+8 1 1 -1 -1
+8 1 2 6 7
+8 1 3 -1 -1
+8 2 0 6 7
+8 2 1 -1 -1
+8 2 2 6 7
+8 2 3 -1 -1
+8 3 0 6 7
+8 3 1 -1 -1
+8 3 2 6 7
+8 3 3 -1 -1
+8 4 0 6 7
+8 4 1 -1 -1
+8 4 2 6 7
+8 4 3 -1 -1
+8 5 0 6 7
+8 5 1 -1 -1
+8 5 2 6 7
+8 5 3 -1 -1
+9 1 0 6 7
+9 1 1 -1 -1
+9 1 2 6 7
+9 1 3 -1 -1
+9 2 0 6 7
+9 2 1 -1 -1
+9 2 2 6 7
+9 2 3 -1 -1
+9 3 0 -1 -1
+9 3 1 6 7
+9 3 2 -1 -1
+9 3 3 -1 -1
+9 4 0 6 7
+9 4 1 -1 -1
+9 4 2 6 7
+9 4 3 -1 -1
+9 5 0 6 7
+9 5 1 -1 -1
+9 5 2 6 7
+9 5 3 -1 -1
+10 1 0 6 7
+10 1 1 -1 -1
+10 1 2 6 7
+10 1 3 -1 -1
+10 2 0 -1 -1
+10 2 1 -1 -1
+10 2 2 -1 -1
+10 2 3 -1 -1
+10 3 0 6 7
+10 3 1 -1 -1
+10 3 2 6 7
+10 3 3 -1 -1
+10 4 0 6 7
+10 4 1 -1 -1
+10 4 2 6 7
+10 4 3 -1 -1
+10 5 0 6 7
+10 5 1 -1 -1
+10 5 2 6 7
+10 5 3 -1 -1
+2147483647
+whxdeMacBook:3205 whx$ g++ 3205.cpp -o 3205
+whxdeMacBook:3205 whx$ ./3205
+4 10 5
+1.........
+AA...x4...
+..A..x....
+2....x....
+..C.3.A...
+1 1 0 1 1
+1 1 1 -1 -1
+1 1 2 -1 -1
+1 1 3 1 1
+1 2 0 1 2
+1 2 1 -1 -1
+1 2 2 -1 -1
+1 2 3 1 2
+1 3 0 1 3
+1 3 1 -1 -1
+1 3 2 -1 -1
+1 3 3 1 3
+1 4 0 1 4
+1 4 1 -1 -1
+1 4 2 -1 -1
+1 4 3 1 4
+1 5 0 1 5
+1 5 1 -1 -1
+1 5 2 -1 -1
+1 5 3 1 5
+2 1 0 1 2
+2 1 1 -1 -1
+2 1 2 -1 -1
+2 1 3 -1 -1
+2 2 0 1 2
+2 2 1 -1 -1
+2 2 2 -1 -1
+2 2 3 -1 -1
+2 3 0 1 2
+2 3 1 -1 -1
+2 3 2 -1 -1
+2 3 3 -1 -1
+2 4 0 1 2
+2 4 1 -1 -1
+2 4 2 -1 -1
+2 4 3 -1 -1
+2 5 0 1 2
+2 5 1 -1 -1
+2 5 2 -1 -1
+2 5 3 -1 -1
+3 1 0 6 5
+3 1 1 6 5
+3 1 2 6 5
+3 1 3 6 5
+3 2 0 6 5
+3 2 1 6 5
+3 2 2 6 5
+3 2 3 6 5
+3 3 0 1 2
+3 3 1 -1 -1
+3 3 2 6 5
+3 3 3 6 5
+3 4 0 1 2
+3 4 1 -1 -1
+3 4 2 6 5
+3 4 3 6 5
+3 5 0 1 2
+3 5 1 -1 -1
+3 5 2 6 5
+3 5 3 6 5
+4 1 0 -1 -1
+4 1 1 -1 -1
+4 1 2 -1 -1
+4 1 3 -1 -1
+4 2 0 1 2
+4 2 1 -1 -1
+4 2 2 6 5
+4 2 3 -1 -1
+4 3 0 1 2
+4 3 1 -1 -1
+4 3 2 6 5
+4 3 3 -1 -1
+4 4 0 1 2
+4 4 1 -1 -1
+4 4 2 6 5
+4 4 3 -1 -1
+4 5 0 1 2
+4 5 1 -1 -1
+4 5 2 6 5
+4 5 3 -1 -1
+5 1 0 1 2
+5 1 1 5 1
+5 1 2 6 5
+5 1 3 -1 -1
+5 2 0 1 2
+5 2 1 5 2
+5 2 2 6 5
+5 2 3 -1 -1
+5 3 0 -1 -1
+5 3 1 -1 -1
+5 3 2 -1 -1
+5 3 3 -1 -1
+5 4 0 1 2
+5 4 1 5 4
+5 4 2 6 5
+5 4 3 -1 -1
+5 5 0 1 2
+5 5 1 5 5
+5 5 2 6 5
+5 5 3 -1 -1
+6 1 0 -1 -1
+6 1 1 -1 -1
+6 1 2 -1 -1
+6 1 3 -1 -1
+6 2 0 6 2
+6 2 1 -1 -1
+6 2 2 6 2
+6 2 3 -1 -1
+6 3 0 6 3
+6 3 1 -1 -1
+6 3 2 6 3
+6 3 3 -1 -1
+6 4 0 6 4
+6 4 1 -1 -1
+6 4 2 6 4
+6 4 3 -1 -1
+6 5 0 6 5
+6 5 1 -1 -1
+6 5 2 6 5
+6 5 3 -1 -1
+7 1 0 6 7
+7 1 1 -1 -1
+7 1 2 6 7
+7 1 3 7 1
+7 2 0 6 7
+7 2 1 -1 -1
+7 2 2 6 7
+7 2 3 7 2
+7 3 0 6 7
+7 3 1 -1 -1
+7 3 2 6 7
+7 3 3 7 3
+7 4 0 6 7
+7 4 1 -1 -1
+7 4 2 6 7
+7 4 3 7 4
+7 5 0 6 7
+7 5 1 -1 -1
+7 5 2 6 7
+7 5 3 7 5
+8 1 0 -1 -1
+8 1 1 -1 -1
+8 1 2 -1 -1
+8 1 3 -1 -1
+8 2 0 6 7
+8 2 1 -1 -1
+8 2 2 6 7
+8 2 3 -1 -1
+8 3 0 6 7
+8 3 1 -1 -1
+8 3 2 6 7
+8 3 3 -1 -1
+8 4 0 6 7
+8 4 1 -1 -1
+8 4 2 6 7
+8 4 3 -1 -1
+8 5 0 6 7
+8 5 1 -1 -1
+8 5 2 6 7
+8 5 3 -1 -1
+9 1 0 6 7
+9 1 1 -1 -1
+9 1 2 6 7
+9 1 3 -1 -1
+9 2 0 6 7
+9 2 1 -1 -1
+9 2 2 6 7
+9 2 3 -1 -1
+9 3 0 -1 -1
+9 3 1 6 7
+9 3 2 -1 -1
+9 3 3 -1 -1
+9 4 0 6 7
+9 4 1 -1 -1
+9 4 2 6 7
+9 4 3 -1 -1
+9 5 0 6 7
+9 5 1 -1 -1
+9 5 2 6 7
+9 5 3 -1 -1
+10 1 0 6 7
+10 1 1 -1 -1
+10 1 2 6 7
+10 1 3 -1 -1
+10 2 0 -1 -1
+10 2 1 -1 -1
+10 2 2 -1 -1
+10 2 3 -1 -1
+10 3 0 6 7
+10 3 1 -1 -1
+10 3 2 6 7
+10 3 3 -1 -1
+10 4 0 6 7
+10 4 1 -1 -1
+10 4 2 6 7
+10 4 3 -1 -1
+10 5 0 6 7
+10 5 1 -1 -1
+10 5 2 6 7
+10 5 3 -1 -1
+2147483647
+whxdeMacBook:3205 whx$ g++ 3205.cpp -o 3205
+whxdeMacBook:3205 whx$ ./3205
+4 10 5
+1.........
+AA...x4...
+..A..x....
+2....x....
+..C.3.A...
+1 1 0 1 1
+1 1 1 -1 -1
+1 1 2 -1 -1
+1 1 3 1 1
+1 2 0 1 2
+1 2 1 -1 -1
+1 2 2 -1 -1
+1 2 3 1 2
+1 3 0 1 3
+1 3 1 -1 -1
+1 3 2 -1 -1
+1 3 3 1 3
+1 4 0 1 4
+1 4 1 -1 -1
+1 4 2 -1 -1
+1 4 3 1 4
+1 5 0 1 5
+1 5 1 -1 -1
+1 5 2 -1 -1
+1 5 3 1 5
+1 6 0 1 6
+1 6 1 -1 -1
+1 6 2 -1 -1
+1 6 3 1 6
+1 7 0 1 7
+1 7 1 -1 -1
+1 7 2 -1 -1
+1 7 3 1 7
+1 8 0 1 8
+1 8 1 -1 -1
+1 8 2 -1 -1
+1 8 3 1 8
+1 9 0 1 9
+1 9 1 -1 -1
+1 9 2 -1 -1
+1 9 3 1 9
+1 10 0 1 10
+1 10 1 -1 -1
+1 10 2 -1 -1
+1 10 3 1 10
+2 1 0 5 4
+2 1 1 5 4
+2 1 2 5 4
+2 1 3 5 4
+2 2 0 5 4
+2 2 1 5 4
+2 2 2 5 4
+2 2 3 5 4
+2 3 0 1 2
+2 3 1 -1 -1
+2 3 2 5 4
+2 3 3 5 4
+2 4 0 1 2
+2 4 1 -1 -1
+2 4 2 5 4
+2 4 3 5 4
+2 5 0 1 2
+2 5 1 -1 -1
+2 5 2 5 4
+2 5 3 5 4
+2 6 0 -1 -1
+2 6 1 -1 -1
+2 6 2 -1 -1
+2 6 3 -1 -1
+2 7 0 1 2
+2 7 1 -1 -1
+2 7 2 5 4
+2 7 3 5 4
+2 8 0 1 2
+2 8 1 -1 -1
+2 8 2 5 4
+2 8 3 5 4
+2 9 0 1 2
+2 9 1 -1 -1
+2 9 2 5 4
+2 9 3 5 4
+2 10 0 1 2
+2 10 1 -1 -1
+2 10 2 5 4
+2 10 3 5 4
+3 1 0 1 2
+3 1 1 -1 -1
+3 1 2 5 4
+3 1 3 -1 -1
+3 2 0 1 2
+3 2 1 -1 -1
+3 2 2 5 4
+3 2 3 -1 -1
+3 3 0 -1 -1
+3 3 1 -1 -1
+3 3 2 -1 -1
+3 3 3 -1 -1
+3 4 0 1 2
+3 4 1 -1 -1
+3 4 2 5 4
+3 4 3 -1 -1
+3 5 0 1 2
+3 5 1 -1 -1
+3 5 2 5 4
+3 5 3 -1 -1
+3 6 0 -1 -1
+3 6 1 -1 -1
+3 6 2 -1 -1
+3 6 3 -1 -1
+3 7 0 1 2
+3 7 1 -1 -1
+3 7 2 5 4
+3 7 3 -1 -1
+3 8 0 1 2
+3 8 1 -1 -1
+3 8 2 5 4
+3 8 3 -1 -1
+3 9 0 1 2
+3 9 1 -1 -1
+3 9 2 5 4
+3 9 3 -1 -1
+3 10 0 1 2
+3 10 1 -1 -1
+3 10 2 5 4
+3 10 3 -1 -1
+4 1 0 1 2
+4 1 1 -1 -1
+4 1 2 5 4
+4 1 3 -1 -1
+4 2 0 1 2
+4 2 1 -1 -1
+4 2 2 5 4
+4 2 3 -1 -1
+4 3 0 1 2
+4 3 1 -1 -1
+4 3 2 5 4
+4 3 3 -1 -1
+4 4 0 1 2
+4 4 1 -1 -1
+4 4 2 5 4
+4 4 3 -1 -1
+4 5 0 1 2
+4 5 1 -1 -1
+4 5 2 5 4
+4 5 3 -1 -1
+4 6 0 -1 -1
+4 6 1 -1 -1
+4 6 2 -1 -1
+4 6 3 -1 -1
+4 7 0 1 2
+4 7 1 -1 -1
+4 7 2 5 4
+4 7 3 -1 -1
+4 8 0 1 2
+4 8 1 -1 -1
+4 8 2 5 4
+4 8 3 -1 -1
+4 9 0 1 2
+4 9 1 -1 -1
+4 9 2 5 4
+4 9 3 -1 -1
+4 10 0 1 2
+4 10 1 -1 -1
+4 10 2 5 4
+4 10 3 -1 -1
+5 1 0 1 2
+5 1 1 -1 -1
+5 1 2 5 1
+5 1 3 -1 -1
+5 2 0 1 2
+5 2 1 -1 -1
+5 2 2 5 2
+5 2 3 -1 -1
+5 3 0 -1 -1
+5 3 1 5 3
+5 3 2 -1 -1
+5 3 3 -1 -1
+5 4 0 1 2
+5 4 1 -1 -1
+5 4 2 5 4
+5 4 3 -1 -1
+5 5 0 1 2
+5 5 1 -1 -1
+5 5 2 5 5
+5 5 3 -1 -1
+5 6 0 1 2
+5 6 1 -1 -1
+5 6 2 5 6
+5 6 3 -1 -1
+5 7 0 -1 -1
+5 7 1 -1 -1
+5 7 2 -1 -1
+5 7 3 -1 -1
+5 8 0 1 2
+5 8 1 -1 -1
+5 8 2 5 8
+5 8 3 -1 -1
+5 9 0 1 2
+5 9 1 -1 -1
+5 9 2 5 9
+5 9 3 -1 -1
+5 10 0 1 2
+5 10 1 -1 -1
+5 10 2 5 10
+5 10 3 -1 -1
+2147483647
+whxdeMacBook:3205 whx$ \

@@ -1,0 +1,24 @@
+Last login: Sun Jun 19 19:12:45 on ttys000
+/Users/whx/Desktop/bzoj/4227/4227 ; exit;
+➜  ~ git:(master) ✗ /Users/whx/Desktop/bzoj/4227/4227 ; exit;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

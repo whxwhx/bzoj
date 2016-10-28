@@ -1,0 +1,8 @@
+ ax + by
+=by + ax
+=b(y + a / b * x)
+if b > 0    / if b < 0
+max{y - kx} / min{y - kx}
+
+使用取反变下凸壳为上凸壳的技巧
+min====>max
